@@ -1,4 +1,4 @@
-public enum HttpMethod {
+enum HttpMethod {
     case delete
     case get
     case post

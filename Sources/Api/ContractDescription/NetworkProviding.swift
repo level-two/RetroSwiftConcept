@@ -1,5 +1,12 @@
 import Foundation
 
+protocol NetworkProviding: AnyObject {
+    func perform<Request, Response: Decodable>(
+        request: Request,
+        to endpoint: EndpointDescribing
+    ) async throws -> Response
+}
+
 extension NetworkProviding {
     func resolvePath<Params>(format: String, params: Params) -> String {
         Mirror(reflecting: params)

@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol NetworkService {
+protocol NetworkService {
     func setConfiguration(
         scheme: String,
         host: String,

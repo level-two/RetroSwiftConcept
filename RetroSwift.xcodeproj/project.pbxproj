@@ -23,7 +23,6 @@
 		38D7E77E2A41C9D300274962 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E76B2A41C9D300274962 /* Post.swift */; };
 		38D7E77F2A41C9D300274962 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E76C2A41C9D300274962 /* Get.swift */; };
 		38D7E7802A41C9D300274962 /* Put.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E76D2A41C9D300274962 /* Put.swift */; };
-		38D7E7812A41C9D300274962 /* NetworkProviding+params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E76E2A41C9D300274962 /* NetworkProviding+params.swift */; };
 		38D7E7822A41C9D300274962 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E76F2A41C9D300274962 /* Body.swift */; };
 		38D7E7832A41C9D300274962 /* UrlSessionNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E7712A41C9D300274962 /* UrlSessionNetworkService.swift */; };
 		38D7E7842A41C9D300274962 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E7722A41C9D300274962 /* NetworkService.swift */; };
@@ -55,7 +54,6 @@
 		38D7E76B2A41C9D300274962 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		38D7E76C2A41C9D300274962 /* Get.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
 		38D7E76D2A41C9D300274962 /* Put.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Put.swift; sourceTree = "<group>"; };
-		38D7E76E2A41C9D300274962 /* NetworkProviding+params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkProviding+params.swift"; sourceTree = "<group>"; };
 		38D7E76F2A41C9D300274962 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		38D7E7712A41C9D300274962 /* UrlSessionNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlSessionNetworkService.swift; sourceTree = "<group>"; };
 		38D7E7722A41C9D300274962 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -103,7 +101,7 @@
 				38D7E7502A41C88500274962 /* RetroSwiftApp.swift */,
 				38D7E7522A41C88500274962 /* ContentView.swift */,
 				38D7E78D2A41E02A00274962 /* ContentViewModel.swift */,
-				38D7E7862A41CA0C00274962 /* BandsInTown */,
+				38D7E7862A41CA0C00274962 /* BandsInTownApi */,
 				38D7E75F2A41C96B00274962 /* Api */,
 			);
 			path = Sources;
@@ -120,45 +118,34 @@
 		38D7E75F2A41C96B00274962 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				38D7E7602A41C9D300274962 /* ApiDefinition */,
+				38D7E7602A41C9D300274962 /* ContractDescription */,
 				38D7E7702A41C9D300274962 /* NetworkService */,
 			);
 			path = Api;
 			sourceTree = "<group>";
 		};
-		38D7E7602A41C9D300274962 /* ApiDefinition */ = {
+		38D7E7602A41C9D300274962 /* ContractDescription */ = {
 			isa = PBXGroup;
 			children = (
-				38D7E7612A41C9D300274962 /* Query.swift */,
-				38D7E7622A41C9D300274962 /* PathDescribing.swift */,
-				38D7E7632A41C9D300274962 /* HeaderDescribing.swift */,
-				38D7E7642A41C9D300274962 /* Delete.swift */,
-				38D7E7652A41C9D300274962 /* BodyDescribing.swift */,
 				38D7E7662A41C9D300274962 /* NetworkProviding.swift */,
-				38D7E7672A41C9D300274962 /* QueryDescribing.swift */,
-				38D7E7682A41C9D300274962 /* Path.swift */,
-				38D7E7692A41C9D300274962 /* Header.swift */,
-				38D7E76A2A41C9D300274962 /* EndpointDescribing.swift */,
-				38D7E76B2A41C9D300274962 /* Post.swift */,
-				38D7E76C2A41C9D300274962 /* Get.swift */,
-				38D7E76D2A41C9D300274962 /* Put.swift */,
-				38D7E76E2A41C9D300274962 /* NetworkProviding+params.swift */,
-				38D7E76F2A41C9D300274962 /* Body.swift */,
+				38F169742A42F7AE004012DC /* Methods */,
+				38F169762A42F7F1004012DC /* Params */,
+				38F169752A42F7BF004012DC /* Protocols */,
 			);
-			path = ApiDefinition;
+			path = ContractDescription;
 			sourceTree = "<group>";
 		};
 		38D7E7702A41C9D300274962 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				38D7E7712A41C9D300274962 /* UrlSessionNetworkService.swift */,
-				38D7E7722A41C9D300274962 /* NetworkService.swift */,
 				38D7E7732A41C9D300274962 /* HttpMethod.swift */,
+				38D7E7722A41C9D300274962 /* NetworkService.swift */,
+				38D7E7712A41C9D300274962 /* UrlSessionNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
-		38D7E7862A41CA0C00274962 /* BandsInTown */ = {
+		38D7E7862A41CA0C00274962 /* BandsInTownApi */ = {
 			isa = PBXGroup;
 			children = (
 				38D7E78B2A41DA3700274962 /* BandsInTownApi.swift */,
@@ -168,7 +155,41 @@
 				38D7E7952A41E29500274962 /* ArtistEventsResponse.swift */,
 				38D7E7882A41CA0C00274962 /* BandsInTownDomain.swift */,
 			);
-			path = BandsInTown;
+			path = BandsInTownApi;
+			sourceTree = "<group>";
+		};
+		38F169742A42F7AE004012DC /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E7642A41C9D300274962 /* Delete.swift */,
+				38D7E76C2A41C9D300274962 /* Get.swift */,
+				38D7E76B2A41C9D300274962 /* Post.swift */,
+				38D7E76D2A41C9D300274962 /* Put.swift */,
+			);
+			path = Methods;
+			sourceTree = "<group>";
+		};
+		38F169752A42F7BF004012DC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E7652A41C9D300274962 /* BodyDescribing.swift */,
+				38D7E76A2A41C9D300274962 /* EndpointDescribing.swift */,
+				38D7E7632A41C9D300274962 /* HeaderDescribing.swift */,
+				38D7E7622A41C9D300274962 /* PathDescribing.swift */,
+				38D7E7672A41C9D300274962 /* QueryDescribing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		38F169762A42F7F1004012DC /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E76F2A41C9D300274962 /* Body.swift */,
+				38D7E7692A41C9D300274962 /* Header.swift */,
+				38D7E7682A41C9D300274962 /* Path.swift */,
+				38D7E7612A41C9D300274962 /* Query.swift */,
+			);
+			path = Params;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +266,6 @@
 				38D7E77D2A41C9D300274962 /* EndpointDescribing.swift in Sources */,
 				38D7E7902A41E27E00274962 /* FindArtistRequest.swift in Sources */,
 				38D7E78A2A41CA0C00274962 /* BandsInTownDomain.swift in Sources */,
-				38D7E7812A41C9D300274962 /* NetworkProviding+params.swift in Sources */,
 				38D7E7532A41C88500274962 /* ContentView.swift in Sources */,
 				38D7E77E2A41C9D300274962 /* Post.swift in Sources */,
 				38D7E7762A41C9D300274962 /* HeaderDescribing.swift in Sources */,
