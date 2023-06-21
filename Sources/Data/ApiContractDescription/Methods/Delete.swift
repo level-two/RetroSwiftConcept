@@ -5,7 +5,7 @@ class Delete<Request, Response: Decodable>: EndpointDescribing {
     typealias NetworkAction = (Request) async throws -> Response
 
     let path: String
-    var method: HttpMethod { .put }
+    var method: HttpMethod { .delete }
 
     init(_ path: String) {
         self.path = path
