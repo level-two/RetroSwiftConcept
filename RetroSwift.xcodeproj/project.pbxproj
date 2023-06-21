@@ -98,11 +98,8 @@
 		38D7E74F2A41C88500274962 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				38D7E7502A41C88500274962 /* RetroSwiftApp.swift */,
-				38D7E7522A41C88500274962 /* ContentView.swift */,
-				38D7E78D2A41E02A00274962 /* ContentViewModel.swift */,
-				38D7E7862A41CA0C00274962 /* BandsInTownApi */,
-				38D7E75F2A41C96B00274962 /* Api */,
+				38F169782A430231004012DC /* Presentation */,
+				38F1697B2A43029D004012DC /* Data */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -115,16 +112,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		38D7E75F2A41C96B00274962 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-				38D7E7602A41C9D300274962 /* ContractDescription */,
-				38D7E7702A41C9D300274962 /* NetworkService */,
-			);
-			path = Api;
-			sourceTree = "<group>";
-		};
-		38D7E7602A41C9D300274962 /* ContractDescription */ = {
+		38D7E75F2A41C96B00274962 /* ApiContractDescription */ = {
 			isa = PBXGroup;
 			children = (
 				38D7E7662A41C9D300274962 /* NetworkProviding.swift */,
@@ -132,13 +120,12 @@
 				38F169762A42F7F1004012DC /* Params */,
 				38F169752A42F7BF004012DC /* Protocols */,
 			);
-			path = ContractDescription;
+			path = ApiContractDescription;
 			sourceTree = "<group>";
 		};
 		38D7E7702A41C9D300274962 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				38D7E7732A41C9D300274962 /* HttpMethod.swift */,
 				38D7E7722A41C9D300274962 /* NetworkService.swift */,
 				38D7E7712A41C9D300274962 /* UrlSessionNetworkService.swift */,
 			);
@@ -149,11 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				38D7E78B2A41DA3700274962 /* BandsInTownApi.swift */,
-				38D7E78F2A41E27E00274962 /* FindArtistRequest.swift */,
-				38D7E7912A41E28300274962 /* FindArtistResponse.swift */,
-				38D7E7932A41E28C00274962 /* ArtistEventsRequest.swift */,
-				38D7E7952A41E29500274962 /* ArtistEventsResponse.swift */,
 				38D7E7882A41CA0C00274962 /* BandsInTownDomain.swift */,
+				38F169792A43024C004012DC /* Requests */,
+				38F1697A2A43025C004012DC /* Responses */,
 			);
 			path = BandsInTownApi;
 			sourceTree = "<group>";
@@ -172,6 +157,7 @@
 		38F169752A42F7BF004012DC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				38D7E7732A41C9D300274962 /* HttpMethod.swift */,
 				38D7E7652A41C9D300274962 /* BodyDescribing.swift */,
 				38D7E76A2A41C9D300274962 /* EndpointDescribing.swift */,
 				38D7E7632A41C9D300274962 /* HeaderDescribing.swift */,
@@ -190,6 +176,44 @@
 				38D7E7612A41C9D300274962 /* Query.swift */,
 			);
 			path = Params;
+			sourceTree = "<group>";
+		};
+		38F169782A430231004012DC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E7502A41C88500274962 /* RetroSwiftApp.swift */,
+				38D7E7522A41C88500274962 /* ContentView.swift */,
+				38D7E78D2A41E02A00274962 /* ContentViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		38F169792A43024C004012DC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E78F2A41E27E00274962 /* FindArtistRequest.swift */,
+				38D7E7932A41E28C00274962 /* ArtistEventsRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		38F1697A2A43025C004012DC /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E7912A41E28300274962 /* FindArtistResponse.swift */,
+				38D7E7952A41E29500274962 /* ArtistEventsResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		38F1697B2A43029D004012DC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				38D7E7862A41CA0C00274962 /* BandsInTownApi */,
+				38D7E75F2A41C96B00274962 /* ApiContractDescription */,
+				38D7E7702A41C9D300274962 /* NetworkService */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

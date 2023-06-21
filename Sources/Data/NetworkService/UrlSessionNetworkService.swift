@@ -47,7 +47,7 @@ final class UrlSessionNetworkService: NetworkService {
 
 private extension UrlSessionNetworkService {
     func assembleURLRequest(
-        httpMethod: HttpMethod,
+        httpMethod: String,
         path: String,
         headerParams: [String: String]?,
         queryParams: [String: String]?,
@@ -65,7 +65,7 @@ private extension UrlSessionNetworkService {
         }
 
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = httpMethod.asString
+        urlRequest.httpMethod = httpMethod
 
         headerParams?.forEach { key, value in
             urlRequest.setValue(value, forHTTPHeaderField: key)
@@ -122,17 +122,6 @@ private extension UrlSessionNetworkService {
                 print("Decoding error:")
                 print(error.localizedDescription)
             }
-        }
-    }
-}
-
-private extension HttpMethod {
-    var asString: String {
-        switch self {
-        case .delete: return "DELETE"
-        case .get: return "GET"
-        case .post: return "POST"
-        case .put: return "PUT"
         }
     }
 }

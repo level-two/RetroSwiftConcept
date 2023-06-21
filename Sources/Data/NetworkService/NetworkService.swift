@@ -8,7 +8,7 @@ protocol NetworkService {
     )
 
     func request<Response: Decodable>(
-        httpMethod: HttpMethod,
+        httpMethod: String,
         path: String,
         headerParams: [String: String]?,
         queryParams: [String: String]?,
