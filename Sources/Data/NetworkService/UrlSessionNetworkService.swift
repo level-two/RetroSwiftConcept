@@ -40,9 +40,6 @@ final class UrlSessionNetworkService: NetworkService {
         configuration.httpAdditionalHeaders = sharedHeaders
         return configuration
     }()
-
-    private lazy var encoder = JSONEncoder()
-    private lazy var decoder = JSONDecoder()
 }
 
 private extension UrlSessionNetworkService {
@@ -71,8 +68,8 @@ private extension UrlSessionNetworkService {
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
 
-        if let body = body {
-            urlRequest.httpBody = try encoder.encode(body)
+        if let body {
+            urlRequest.httpBody = try JSONEncoder().encode(body)
         }
 
         return urlRequest
@@ -80,17 +77,17 @@ private extension UrlSessionNetworkService {
 }
 
 private extension UrlSessionNetworkService {
-    func perform<T: Decodable>(request: URLRequest, object: T.Type) async throws -> T {
+    func perform<Response: Decodable>(request: URLRequest, object: Response.Type) async throws -> Response {
         try await withCheckedThrowingContinuation { [weak self] continuation in
             self?.dataTask(request: request, object: object, continuation: continuation)
                 .resume()
         }
     }
 
-    func dataTask<T: Decodable>(
+    func dataTask<Response: Decodable>(
         request: URLRequest,
-        object: T.Type,
-        continuation: CheckedContinuation<T, Error>
+        object: Response.Type,
+        continuation: CheckedContinuation<Response, Error>
     ) -> URLSessionDataTask {
 
         print("Request:")
@@ -100,7 +97,7 @@ private extension UrlSessionNetworkService {
             print("Response:")
             print(response?.description ?? "")
 
-            if let error = error {
+            if let error {
                 continuation.resume(throwing: error)
                 return
             }
@@ -114,7 +111,16 @@ private extension UrlSessionNetworkService {
             print(String(data: data, encoding: .utf8) ?? "")
 
             do {
-                let object = try self.decoder.decode(T.self, from: data)
+                let decoder = JSONDecoder()
+
+                if Response.self is ErrorResponseDecoding.Type,
+                   let urlResponse = response as? HTTPURLResponse
+                {
+                    let isSuccess = (200...299).contains(urlResponse.statusCode)
+                    decoder.userInfo[ErrorResponseDecodingKey.isErrorResponseCodingKey] = !isSuccess
+                }
+
+                let object = try decoder.decode(Response.self, from: data)
                 continuation.resume(returning: object)
             } catch {
                 continuation.resume(throwing: error)
@@ -122,6 +128,26 @@ private extension UrlSessionNetworkService {
                 print("Decoding error:")
                 print(error.localizedDescription)
             }
+        }
+    }
+}
+
+private protocol ErrorResponseDecoding { }
+
+private enum ErrorResponseDecodingKey {
+    static var isErrorResponseCodingKey: CodingUserInfoKey {
+        .init(rawValue: #function)!
+    }
+}
+
+extension Either: Decodable, ErrorResponseDecoding {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+
+        if decoder.userInfo[ErrorResponseDecodingKey.isErrorResponseCodingKey] as? Bool == true {
+            self = try .errorResponse(container.decode(ErrorResponse.self))
+        } else {
+            self = try .response(container.decode(Response.self))
         }
     }
 }

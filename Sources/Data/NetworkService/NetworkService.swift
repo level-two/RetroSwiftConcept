@@ -1,5 +1,10 @@
 import Foundation
 
+enum Either<Response: Decodable, ErrorResponse: Decodable> {
+    case response(Response)
+    case errorResponse(ErrorResponse)
+}
+
 protocol NetworkService {
     func setConfiguration(
         scheme: String,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381D189E2A479B6C007BE8F7 /* ArtistEventsErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D189D2A479B6C007BE8F7 /* ArtistEventsErrorResponse.swift */; };
 		38D7E7512A41C88500274962 /* RetroSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E7502A41C88500274962 /* RetroSwiftApp.swift */; };
 		38D7E7532A41C88500274962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D7E7522A41C88500274962 /* ContentView.swift */; };
 		38D7E7552A41C88D00274962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D7E7542A41C88D00274962 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381D189D2A479B6C007BE8F7 /* ArtistEventsErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistEventsErrorResponse.swift; sourceTree = "<group>"; };
 		38D7E74D2A41C88500274962 /* RetroSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetroSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D7E7502A41C88500274962 /* RetroSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetroSwiftApp.swift; sourceTree = "<group>"; };
 		38D7E7522A41C88500274962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				38D7E7912A41E28300274962 /* FindArtistResponse.swift */,
 				38D7E7952A41E29500274962 /* ArtistEventsResponse.swift */,
+				381D189D2A479B6C007BE8F7 /* ArtistEventsErrorResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				38D7E78E2A41E02A00274962 /* ContentViewModel.swift in Sources */,
 				38D7E77F2A41C9D300274962 /* Get.swift in Sources */,
 				38D7E7852A41C9D300274962 /* HttpMethod.swift in Sources */,
+				381D189E2A479B6C007BE8F7 /* ArtistEventsErrorResponse.swift in Sources */,
 				38D7E78C2A41DA3700274962 /* BandsInTownApi.swift in Sources */,
 				38D7E7752A41C9D300274962 /* PathDescribing.swift in Sources */,
 				38D7E7832A41C9D300274962 /* UrlSessionNetworkService.swift in Sources */,

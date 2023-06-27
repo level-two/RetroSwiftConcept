@@ -12,7 +12,7 @@ struct ContentView: View {
                 .padding(.bottom, 8)
         }
         .alert(isPresented:  Binding { viewModel.error != nil } set: { _ in viewModel.error = nil }) {
-            Alert(title: Text("Oops!"), message: Text(viewModel.error?.localizedDescription ?? ""))
+            Alert(title: Text("Oops!"), message: Text(viewModel.error ?? ""))
         }
     }
 
@@ -32,6 +32,8 @@ struct ContentView: View {
                     .frame(height: 32)
             }
             .buttonStyle(.borderedProminent)
+
+            Toggle("Corrupting app id", isOn: $viewModel.corruptAppId)
 
             if viewModel.loading {
                 ProgressView()
